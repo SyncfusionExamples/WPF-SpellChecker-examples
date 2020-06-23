@@ -8,5 +8,6 @@ This repository contains the samples that demonstrate the functionalities of SfS
   <td><a href="Samples/HunSpellCheck">HunSpell Dictionary</a></td>
   <td><a href="Samples/IspellCheck">Ispell Dictionary</a></td>
   <td><a href="Samples/OpenOfficeSpellCheck">OpenOffice Dictionary</a></td>
+  <td><a href="Samples/CustomSpellCheck">Custom Dictionary</a></td>  
  </tr>
 </table>
