@@ -7,11 +7,6 @@
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
        Title="MainWindow" Height="450" Width="800">
 
-    <Window.DataContext>
-        <local:ViewModel/>
-    </Window.DataContext>
-
-
     <Grid VerticalAlignment="Center">
         <StackPanel>
             <TextBox Text="Ribbn illustrats the Microsoft illustrats Offce 2007 UI. Our prduct exposes most of the featres of the new UI and eeps intact winhth the Slverlight architecture. Configuring and designing the layout is very easy through XAML code. Ribbon tabs and Ribbon bars are the main client area in Ribbon. Ribbon tabs will allow your end users to navigate and find the appropriate tools for the task at hand. The Ribbon bars will contain the Ribbon tools."
@@ -22,8 +17,7 @@
                  VerticalContentAlignment="Top"/>
             <Button HorizontalAlignment="Center"
                 Content="Spell Check" 
-                Command="{Binding Buttonclick}"
-                CommandParameter="{Binding ElementName=txtbx}">
+                    Click="Button_Click">
             </Button>
         </StackPanel>
     </Grid>
