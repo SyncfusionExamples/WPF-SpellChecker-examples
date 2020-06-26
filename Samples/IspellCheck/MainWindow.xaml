@@ -6,21 +6,18 @@
         xmlns:local="clr-namespace:IspellCheck"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="SfSpellChecker - Ispell dictionary" Height="450" Width="800">
-    <Window.DataContext>
-        <local:ViewModel/>
-    </Window.DataContext>
+    
     <Grid VerticalAlignment="Center">
         <StackPanel>
             <TextBox Text="gracsq por venizr por favor ven de nuevoq" 
-                 Height="300"
-                 Width="300" 
-                 x:Name="txtbx"
-                 TextWrapping="Wrap"                
-                 VerticalContentAlignment="Top"/>
+                     Height="300"
+                     Width="300" 
+                     x:Name="txtbx"
+                     TextWrapping="Wrap"                
+                     VerticalContentAlignment="Top"/>
             <Button HorizontalAlignment="Center"
-                Content="Spell Check" 
-                Command="{Binding Buttonclick}"
-                CommandParameter="{Binding ElementName=txtbx}">
+                    Content="Spell Check" 
+                    Click="Button_Click" >
             </Button>
         </StackPanel>
     </Grid>
