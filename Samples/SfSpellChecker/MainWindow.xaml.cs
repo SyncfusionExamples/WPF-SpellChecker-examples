@@ -24,17 +24,45 @@ using System.Windows.Shapes;
 
 namespace SpellChecker
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        
-        public MainWindow()
-        {    
-            InitializeComponent();
-          
+        TextSpellEditor SpellEditor;
+        public IEditorProperties Editor
+        {
+            get;
+            set;
         }
-      
+        public SfSpellChecker SpellChecker
+        {
+            get;
+            set;
+        }
+        public MainWindow()
+        {
+            SpellChecker = new SfSpellChecker();
+            InitializeComponent();
+            SpellEditor = new TextSpellEditor(txtbx);
+            Editor = SpellEditor;
+            SpellChecker.PerformSpellCheckUsingContextMenu(Editor);
+            SpellChecker.SpellCheckCompleted += SpellChecker_SpellCheckCompleted;
+        }
+
+        private void SpellChecker_SpellCheckCompleted(object sender, EventArgs e)
+        {
+            if (showMessagebx.IsChecked == true)
+            {
+                (e as SpellCheckCompletedEventArgs).ShowMessageBox = true;
+            }
+            else
+            {
+                (e as SpellCheckCompletedEventArgs).ShowMessageBox = false;
+            }
+        }
+
+        //Call SpellCheck method to open SpellCheck on button click
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SpellChecker.PerformSpellCheckUsingDialog(Editor);
+        }
     }
 }

@@ -4,28 +4,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SpellChecker" WindowStartupLocation="CenterScreen" Icon="App.Ico"
-        mc:Ignorable="d" Title="SfSpellChecker" syncfusion:SkinStorage.VisualStyle="Metro"
+        mc:Ignorable="d" Title="SfSpellChecker"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         Height="450" Width="800">
-    <Window.DataContext>
-        <local:ViewModel/>
-    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Margin="3, 10, 3, 3" x:Name="txtbx" FontSize="14" TextWrapping="Wrap" VerticalContentAlignment="Top"   VerticalAlignment="Stretch" >
+        <TextBox Margin="3, 10, 3, 3"
+                 x:Name="txtbx" 
+                 FontSize="14" 
+                 TextWrapping="Wrap" 
+                 VerticalContentAlignment="Top" 
+                 VerticalAlignment="Stretch" >
             <TextBox.Text>
                 Natue, in the broaest sense, is the natural, physical, or material world or universe. "Nature" can refer to the phenomena of the physical world, and also to life in general. The study of nature is a large, if not the only, part of science. Although humans are part of nature, human activity is often understood as a separate category from other natural phenomena.    
             </TextBox.Text>
         </TextBox>
 
-        <GroupBox Margin="0,0,3,3" FontWeight="Bold" FontSize="14" Grid.Column="1" BorderBrush="Silver" Header="Properties" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <GroupBox Margin="0,0,3,3" 
+                  FontWeight="Bold"
+                  FontSize="14" 
+                  Grid.Column="1"
+                  BorderBrush="Silver" 
+                  Header="Properties" 
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
             <StackPanel Width="300">
-                <CheckBox IsChecked="{Binding ShowMessageBox}" FontWeight="Normal"  x:Name="showMessagebx" Margin="5"  Tag="1" Content=" Show SpellCheckcompleted Messagebox" ></CheckBox>
-                <Button x:Name="button" FontWeight="Normal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5, 8, 5, 5" Content="Spell Check" Command="{Binding Buttonclick}" CommandParameter="{Binding ElementName=txtbx}"/>
+                <CheckBox FontWeight="Normal" 
+                          x:Name="showMessagebx"
+                          Margin="5" 
+                          Tag="1"
+                          Content=" Show SpellCheckcompleted Messagebox" />
+                <Button x:Name="button" 
+                        Click="Button_Click"
+                        FontWeight="Normal" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Margin="5, 8, 5, 5"
+                        Content="Spell Check" />
             </StackPanel>
         </GroupBox>
     </Grid>
