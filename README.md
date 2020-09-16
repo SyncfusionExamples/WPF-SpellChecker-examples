@@ -6,6 +6,6 @@ This repository contains the samples that demonstrate the functionalities of SfS
  <tr>    
   <td><a href="Samples/SfSpellChecker">SfSpellChecker options</a></td> 
   <td><a href="Samples/CustomSpellCheck">Custom Dictionary</a></td>  
-  <td><a href="Samples/Theme">Theme</a></td>  
+  <td><a href="Samples/Themes">Themes</a></td>  
  </tr>
 </table>
