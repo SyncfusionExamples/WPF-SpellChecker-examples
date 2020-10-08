@@ -38,14 +38,13 @@ namespace CustomSpellCheck
             SpellChecker.Dictionaries = new DictionaryCollection();
 
             // Get the current PROJECT directory
-            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-
+            Uri CustomDict_uri = new Uri(Directory.GetCurrentDirectory() + @"\CustomDictionary\Custom_en-US.txt", UriKind.Absolute);
             //Add US culture Custom dictionary
             SpellChecker.Dictionaries.Add(
                 new CustomDictionary()
                 {
                     Culture = culture,
-                    DictionaryUri = new Uri(projectDirectory + @"\English\Custom_en-US.txt", UriKind.Absolute)
+                    DictionaryUri = CustomDict_uri
                 }
             );
 
