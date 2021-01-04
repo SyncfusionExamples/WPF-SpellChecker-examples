@@ -6,7 +6,6 @@
 // applicable laws. 
 #endregion
 using Syncfusion.Windows.Controls;
-using Syncfusion.Windows.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,25 +25,10 @@ namespace SpellChecker
 {
     public partial class MainWindow : Window
     {
-        TextSpellEditor SpellEditor;
-        public IEditorProperties Editor
-        {
-            get;
-            set;
-        }
-        public SfSpellChecker SpellChecker
-        {
-            get;
-            set;
-        }
         public MainWindow()
         {
-            SpellChecker = new SfSpellChecker();
             InitializeComponent();
-            SpellEditor = new TextSpellEditor(txtbx);
-            Editor = SpellEditor;
-            SpellChecker.PerformSpellCheckUsingContextMenu(Editor);
-            SpellChecker.SpellCheckCompleted += SpellChecker_SpellCheckCompleted;
+            spellChecker.SpellCheckCompleted += SpellChecker_SpellCheckCompleted;
         }
 
         private void SpellChecker_SpellCheckCompleted(object sender, EventArgs e)
@@ -62,7 +46,7 @@ namespace SpellChecker
         //Call SpellCheck method to open SpellCheck on button click
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SpellChecker.PerformSpellCheckUsingDialog(Editor);
+            spellChecker.PerformSpellCheckUsingDialog();
         }
     }
 }

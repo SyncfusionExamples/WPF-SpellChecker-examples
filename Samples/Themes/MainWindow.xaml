@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:local="clr-namespace:Themes"
+        xmlns:local="clr-namespace:Themes" xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="SpellChecker - Appearance" Height="450" Width="600">
     <Window.DataContext>
@@ -29,9 +29,18 @@
                     <TextBox.Text>
                         Natue, in the broaest sense, is the natural, physical, or material world or universe. "Nature" can refer to the phenomena of the physical world, and also to life in general. The study of nature is a large, if not the only, part of science. Although humans are part of nature, human activity is often understood as a separate category from other natural phenomena.
                     </TextBox.Text>
+                    <!--Adding Spellchecker to the TextBox-->
+                    <syncfusion:SfSpellChecker.SpellChecker>
+                        <syncfusion:SfSpellChecker 
+                            x:Name="spellChecker"
+                            EnableContextMenu="True"
+                            EnableSpellCheck="True"/>
+                    </syncfusion:SfSpellChecker.SpellChecker>
+
+
                 </TextBox>
                 <Button x:Name="button" 
-                        Click="Button_Click"
+                        Click="SpellCheck_Clicked"
                         FontWeight="Normal" 
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Center"

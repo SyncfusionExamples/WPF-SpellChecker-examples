@@ -22,6 +22,14 @@
             <TextBox.Text>
                 Natue, in the broaest sense, is the natural, physical, or material world or universe. "Nature" can refer to the phenomena of the physical world, and also to life in general. The study of nature is a large, if not the only, part of science. Although humans are part of nature, human activity is often understood as a separate category from other natural phenomena.    
             </TextBox.Text>
+
+            <!--Adding Spellchecker to the TextBox-->
+            <syncfusion:SfSpellChecker.SpellChecker>
+                <syncfusion:SfSpellChecker 
+                    x:Name="spellChecker"
+                    EnableContextMenu="True"
+                    EnableSpellCheck="True"/>
+            </syncfusion:SfSpellChecker.SpellChecker>
         </TextBox>
 
         <GroupBox Margin="0,0,3,3" 

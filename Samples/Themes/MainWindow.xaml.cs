@@ -21,30 +21,15 @@ namespace Themes
     /// </summary>
     public partial class MainWindow : Window
     {
-        TextSpellEditor SpellEditor;
-        public IEditorProperties Editor
-        {
-            get;
-            set;
-        }
-        public SfSpellChecker SpellChecker
-        {
-            get;
-            set;
-        }
         public MainWindow()
         {
-            SpellChecker = new SfSpellChecker();
             InitializeComponent();
-            SpellEditor = new TextSpellEditor(txtbx);
-            Editor = SpellEditor;
-            SpellChecker.PerformSpellCheckUsingContextMenu(Editor);
         }
 
         //Call SpellCheck method to open SpellCheck on button click
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SpellCheck_Clicked(object sender, RoutedEventArgs e)
         {
-            SpellChecker.PerformSpellCheckUsingDialog(Editor);
+            spellChecker.PerformSpellCheckUsingDialog();
         }
     }
 }

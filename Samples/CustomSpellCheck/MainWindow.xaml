@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CustomSpellCheck"
+        xmlns:local="clr-namespace:CustomSpellCheck" xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
        Title="MainWindow" Height="450" Width="800">
 
@@ -14,10 +14,26 @@
                  Width="300" 
                  x:Name="txtbx"
                  TextWrapping="Wrap"                
-                 VerticalContentAlignment="Top"/>
+                 VerticalContentAlignment="Top">
+                <!--Adding Spellchecker to the TextBox-->
+                <syncfusion:SfSpellChecker.SpellChecker>
+                    <syncfusion:SfSpellChecker
+                        Culture="en-US"
+                        x:Name="spellChecker"
+                        EnableSpellCheck="True"
+                        EnableContextMenu="True">
+                        <syncfusion:SfSpellChecker.Dictionaries>
+
+                            <!--Adding english cultured custom dictionary-->
+                            <syncfusion:CustomDictionary DictionaryUri="E:\18.4\18.4 release need to commit samples\spellchecker sample\wpf-spellchecker-examples\samples\customspellcheck\customdictionary\custom_en-us.txt"
+                                                         Culture="en-US"/>
+                        </syncfusion:SfSpellChecker.Dictionaries>
+                    </syncfusion:SfSpellChecker>
+                </syncfusion:SfSpellChecker.SpellChecker>
+            </TextBox>
             <Button HorizontalAlignment="Center"
-                Content="Spell Check" 
-                    Click="Button_Click">
+                    Content="Spell Check" 
+                    Click="SpellCheck_Clicked">
             </Button>
         </StackPanel>
     </Grid>
